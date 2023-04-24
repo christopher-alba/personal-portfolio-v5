@@ -1,0 +1,30 @@
+{
+    "light": {
+        "name": "light",
+        "colors": {
+            "brown1": "#FFFBED",
+            "brown2": "#FFF4DD",
+            "brown3": "#826F59",
+            "brown4": "#54493C",
+            "brown5": "#C3B8A6",
+            "brown1Overlay": "#FFFBED7F",
+            "yellow1": "#FFEEB3",
+            "bold": "black",
+            "lowkey": "#FFF2E3"
+        }
+    },
+    "dark": {
+        "name": "dark",
+        "colors": {
+            "brown1": "#54493C",
+            "brown2": "#2D251C",
+            "brown3": "#826F59",
+            "brown4": "#FFFBED",
+            "brown5": "#C3B8A6",
+            "brown1Overlay": "#54483B7F",
+            "yellow1": "#FFEEB3",
+            "bold": "white",
+            "lowkey": "#5E5245"
+        }
+    }
+}
