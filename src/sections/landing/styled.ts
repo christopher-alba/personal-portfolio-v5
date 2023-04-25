@@ -82,6 +82,9 @@ export const RightDiv = styled("div")`
   padding: 50px;
   padding-left: 100px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @media (max-width: ${bp2}px) {
     padding: 50px;
     position: absolute;
@@ -96,9 +99,6 @@ export const RightDiv = styled("div")`
     height: 100%;
     top: 0;
     background: ${({ theme }) => theme.colors.brown1Overlay};
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 `;
 
@@ -109,6 +109,7 @@ export const Number0 = styled("p")`
   color: ${({ theme }) => theme.colors.lowkey};
   margin: 0;
   position: absolute;
+  z-index: -1;
   top: 0;
   right: 0;
   @media (max-width: ${bp2}px) {
@@ -132,7 +133,8 @@ export const Name = styled("h1")`
   color: ${({ theme }) => theme.colors.bold};
   font-family: "Inter", "Serif";
   @media (max-width: ${bp1}px) {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
+    margin-top: 0;
   }
   @media (max-width: ${bp2}px) {
     font-size: 2.5rem;
@@ -146,6 +148,9 @@ export const Occupation = styled("h2")`
   font-size: 2.5rem;
   margin-bottom: 5px;
   color: ${({ theme }) => theme.colors.bold};
+  @media (max-width: ${bp1}px) {
+    font-size: 2rem;
+  }
   @media (max-width: ${bp2}px) {
     font-size: 1.5rem;
     z-index: 1;
