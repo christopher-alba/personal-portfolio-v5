@@ -133,7 +133,7 @@ export const Name = styled("h1")`
   color: ${({ theme }) => theme.colors.bold};
   font-family: "Inter", "Serif";
   @media (max-width: ${bp1}px) {
-    font-size: 3.5rem;
+    font-size: 4.0rem;
     margin-top: 0;
   }
   @media (max-width: ${bp2}px) {

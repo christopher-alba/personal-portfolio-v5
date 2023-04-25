@@ -4,6 +4,7 @@ import { ReactComponent as Facebook } from "../../svg/icons/facebookIcon.svg";
 import { ReactComponent as Instagram } from "../../svg/icons/instagramIcon.svg";
 import { ReactComponent as Github } from "../../svg/icons/githubIcon.svg";
 import { ReactComponent as Linkedin } from "../../svg/icons/linkedinIcon.svg";
+import { ReactComponent as Bars } from "../../svg/icons/bars-solid.svg";
 
 export const MainDiv = styled("div")`
   width: ${NavbarWidth};
@@ -68,4 +69,90 @@ export const ThemeButton = styled("button")`
     padding-left: 50px;
   }
   z-index: 1000;
+`;
+export const MobileThemeButton = styled("button")`
+  background: ${({ theme }) => theme.colors.brown4};
+  color: ${({ theme }) => theme.colors.brown1};
+  border: none;
+  padding: 10px 25px;
+  transition: 500ms;
+  cursor: pointer;
+  &:hover {
+    background: ${({ theme }) => theme.colors.brown4Hover};
+  }
+`;
+export const MobileMainDiv = styled("div")`
+  padding: 10px;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: ${({ theme }) => theme.colors.brown1};
+  justify-content: space-between;
+`;
+
+export const MenuButton = styled("button")`
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.brown4};
+  &:hover {
+    color: ${({ theme }) => theme.colors.brown4Hover};
+  }
+`;
+
+export const BarsSVG = styled(Bars)`
+  width: fit-content;
+  height: 20px;
+  display: flex;
+  align-items: center;
+`;
+
+export const DropdownMenuMain = styled("div")`
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+`;
+
+export const DropdownMenu = styled("div")`
+  width: 300px;
+  flex-shrink: 1;
+  height: 100vh;
+  box-sizing: border-box;
+  background: ${({ theme }) => theme.colors.brown1};
+`;
+
+export const CloseButtonDiv = styled("div")`
+  width: 50px;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 0;
+`;
+
+export const CloseButton = styled("button")`
+  height: 30px;
+  width: 30px;
+  background: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 10px;
+  color: ${({ theme }) => theme.colors.brown1};
+  border: 1px solid ${({ theme }) => theme.colors.brown1};
 `;

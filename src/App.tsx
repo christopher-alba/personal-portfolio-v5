@@ -7,7 +7,6 @@ import Menu from "./components/Menu";
 import styled from "styled-components";
 import { Container } from "./components/container";
 import { NavbarWidth, mobileNavBreakpoint } from "./sizes";
-
 const ContentDiv = styled("div")`
   width: 100%;
   padding-left: ${NavbarWidth};
