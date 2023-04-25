@@ -99,10 +99,38 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
         </MobileMainDiv>
         {showDropdown && (
           <DropdownMenuMain>
-            <DropdownMenu
-              as={animated.div}
-              style={{ ...springs } as any}
-            ></DropdownMenu>
+            <DropdownMenu as={animated.div} style={{ ...springs } as any}>
+              <IconsDiv>
+                <StyledAnchor
+                  href="https://www.facebook.com/christopher.alba.357/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FacebookSVG />
+                </StyledAnchor>
+                <StyledAnchor
+                  href="https://www.instagram.com/alba.sy.chris/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramSVG />
+                </StyledAnchor>
+                <StyledAnchor
+                  href="https://github.com/christopher-alba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubSVG />
+                </StyledAnchor>
+                <StyledAnchor
+                  href="https://www.linkedin.com/in/christopher-alba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedinSVG />
+                </StyledAnchor>
+              </IconsDiv>
+            </DropdownMenu>
             <CloseButtonDiv as={animated.div} style={{ ...springs } as any}>
               <CloseButton
                 onClick={() => {

@@ -109,7 +109,7 @@ export const Number0 = styled("p")`
   color: ${({ theme }) => theme.colors.lowkey};
   margin: 0;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: 0;
   right: 0;
   @media (max-width: ${bp2}px) {
@@ -133,7 +133,7 @@ export const Name = styled("h1")`
   color: ${({ theme }) => theme.colors.bold};
   font-family: "Inter", "Serif";
   @media (max-width: ${bp1}px) {
-    font-size: 4.0rem;
+    font-size: 4rem;
     margin-top: 0;
   }
   @media (max-width: ${bp2}px) {
@@ -147,14 +147,14 @@ export const Name = styled("h1")`
 export const Occupation = styled("h2")`
   font-size: 2.5rem;
   margin-bottom: 5px;
+  z-index: 1;
+  position: relative;
   color: ${({ theme }) => theme.colors.bold};
   @media (max-width: ${bp1}px) {
     font-size: 2rem;
   }
   @media (max-width: ${bp2}px) {
     font-size: 1.5rem;
-    z-index: 1;
-    position: relative;
   }
 `;
 
@@ -170,15 +170,17 @@ export const StyledHR = styled("hr")`
 
 export const WorksAt = styled("h3")`
   font-size: 1.5rem;
+  z-index: 1;
+  position: relative;
   color: ${({ theme }) => theme.colors.bold};
   @media (max-width: ${bp2}px) {
     font-size: 1.2rem;
-    z-index: 1;
-    position: relative;
   }
 `;
 
 export const StyledP = styled("p")`
+  position: relative;
+  z-index: 1;
   @media (max-width: ${bp2}px) {
     font-size: 0.8rem;
   }
