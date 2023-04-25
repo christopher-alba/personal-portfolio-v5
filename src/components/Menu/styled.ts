@@ -16,12 +16,22 @@ export const MainDiv = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const IconsDiv = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const ButtonsDiv = styled("div")`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  box-sizing: border-box;
 `;
 
 const iconStyles = css`
@@ -50,23 +60,40 @@ export const StyledAnchor = styled("a")`
   }
 `;
 
+export const JumpButton = styled("button")`
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px;
+  transition: 500ms;
+  color: ${({ theme }) => theme.colors.brown4};
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
+  border-right: 5px solid transparent;
+  width: 100%;
+  &:hover {
+    border-right: 5px solid ${({ theme }) => theme.colors.brown4};
+  }
+`;
+
 export const ThemeButton = styled("button")`
   position: fixed;
   top: 0;
-  right: 100px;
+  right: 0;
   background: ${({ theme }) => theme.colors.brown4};
   color: ${({ theme }) => theme.colors.brown1};
   border: none;
-  padding: 20px 50px;
+  padding: 10px 25px;
   transition: 500ms;
-  width: 219px;
-  padding-left: 70px;
+  width: 150px;
+  padding-left: 35px;
   cursor: pointer;
   clip-path: polygon(100% 0, 100% 100%, 21% 100%, 0 40%, 0 0);
   &:hover {
     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 66%, 0 0);
     background: ${({ theme }) => theme.colors.brown4Hover};
-    padding-left: 50px;
+    padding-left: 25px;
   }
   z-index: 1000;
 `;
@@ -136,6 +163,9 @@ export const DropdownMenu = styled("div")`
   width: 300px;
   flex-shrink: 1;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.brown1};
 `;

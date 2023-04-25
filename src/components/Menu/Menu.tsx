@@ -1,6 +1,7 @@
 import { FC, useContext, useState } from "react";
 import {
   BarsSVG,
+  ButtonsDiv,
   CloseButton,
   CloseButtonDiv,
   DropdownMenu,
@@ -9,6 +10,7 @@ import {
   GithubSVG,
   IconsDiv,
   InstagramSVG,
+  JumpButton,
   LinkedinSVG,
   MainDiv,
   MenuButton,
@@ -48,36 +50,7 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
           {theme.name === "light" ? "Dark Mode" : "Light Mode"}
         </ThemeButton>
         <MainDiv>
-          <IconsDiv>
-            <StyledAnchor
-              href="https://www.facebook.com/christopher.alba.357/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FacebookSVG />
-            </StyledAnchor>
-            <StyledAnchor
-              href="https://www.instagram.com/alba.sy.chris/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <InstagramSVG />
-            </StyledAnchor>
-            <StyledAnchor
-              href="https://github.com/christopher-alba"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GithubSVG />
-            </StyledAnchor>
-            <StyledAnchor
-              href="https://www.linkedin.com/in/christopher-alba"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedinSVG />
-            </StyledAnchor>
-          </IconsDiv>
+          <NavMenuContent />
         </MainDiv>
       </>
     );
@@ -100,36 +73,7 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
         {showDropdown && (
           <DropdownMenuMain>
             <DropdownMenu as={animated.div} style={{ ...springs } as any}>
-              <IconsDiv>
-                <StyledAnchor
-                  href="https://www.facebook.com/christopher.alba.357/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FacebookSVG />
-                </StyledAnchor>
-                <StyledAnchor
-                  href="https://www.instagram.com/alba.sy.chris/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <InstagramSVG />
-                </StyledAnchor>
-                <StyledAnchor
-                  href="https://github.com/christopher-alba"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GithubSVG />
-                </StyledAnchor>
-                <StyledAnchor
-                  href="https://www.linkedin.com/in/christopher-alba"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkedinSVG />
-                </StyledAnchor>
-              </IconsDiv>
+              <NavMenuContent />
             </DropdownMenu>
             <CloseButtonDiv as={animated.div} style={{ ...springs } as any}>
               <CloseButton
@@ -148,6 +92,60 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
       </>
     );
   }
+};
+
+const NavMenuContent = () => {
+  return (
+    <>
+      <IconsDiv>
+        <StyledAnchor
+          href="https://www.facebook.com/christopher.alba.357/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FacebookSVG />
+        </StyledAnchor>
+        <StyledAnchor
+          href="https://www.instagram.com/alba.sy.chris/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <InstagramSVG />
+        </StyledAnchor>
+        <StyledAnchor
+          href="https://github.com/christopher-alba"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GithubSVG />
+        </StyledAnchor>
+        <StyledAnchor
+          href="https://www.linkedin.com/in/christopher-alba"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedinSVG />
+        </StyledAnchor>
+      </IconsDiv>
+      <ButtonsDiv>
+        <JumpButton>
+          <strong>0.</strong>Landing
+        </JumpButton>
+        <JumpButton>
+          <strong>1.</strong>About
+        </JumpButton>
+        <JumpButton>
+          <strong>2.</strong>Journey
+        </JumpButton>
+        <JumpButton>
+          <strong>3.</strong>Projects
+        </JumpButton>
+        <JumpButton>
+          <strong>4.</strong>Contact
+        </JumpButton>
+      </ButtonsDiv>
+    </>
+  );
 };
 
 export default Menu;
