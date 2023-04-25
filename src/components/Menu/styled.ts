@@ -5,6 +5,7 @@ import { ReactComponent as Instagram } from "../../svg/icons/instagramIcon.svg";
 import { ReactComponent as Github } from "../../svg/icons/githubIcon.svg";
 import { ReactComponent as Linkedin } from "../../svg/icons/linkedinIcon.svg";
 import { ReactComponent as Bars } from "../../svg/icons/bars-solid.svg";
+import { ReactComponent as XMark } from "../../svg/icons/xmark-solid.svg";
 
 export const MainDiv = styled("div")`
   width: ${NavbarWidth};
@@ -171,7 +172,7 @@ export const DropdownMenu = styled("div")`
 `;
 
 export const CloseButtonDiv = styled("div")`
-  width: 50px;
+  width: fit-content;
   height: 100vh;
   box-sizing: border-box;
   display: flex;
@@ -181,14 +182,15 @@ export const CloseButtonDiv = styled("div")`
 `;
 
 export const CloseButton = styled("button")`
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   background: none;
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-top: 10px;
+  border: none;
   padding: 10px;
   color: ${({ theme }) => theme.colors.brown1};
-  border: 1px solid ${({ theme }) => theme.colors.brown1};
 `;
+
+export const CloseIcon = styled(XMark)``;

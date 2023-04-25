@@ -4,6 +4,7 @@ import {
   ButtonsDiv,
   CloseButton,
   CloseButtonDiv,
+  CloseIcon,
   DropdownMenu,
   DropdownMenuMain,
   FacebookSVG,
@@ -84,7 +85,7 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
                   }, 500);
                 }}
               >
-                X
+                <CloseIcon />
               </CloseButton>
             </CloseButtonDiv>
           </DropdownMenuMain>
