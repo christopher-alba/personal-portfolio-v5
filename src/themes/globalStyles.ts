@@ -6,15 +6,9 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
     background: ${({ theme }) => theme.colors.brown1};
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.brown4} !important;
-    font-family:  'Inter', sans-serif;
-    & button{
-      font-family:  'Inter', sans-serif;
-    }
+    font-family:  'Times New Roman', Times, serif;
     margin:0;
     &::-webkit-scrollbar-track
     {

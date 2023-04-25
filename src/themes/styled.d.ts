@@ -12,6 +12,12 @@ declare module "styled-components" {
       brown4: string;
       brown5: string;
       brown1Overlay: string;
+      brown3Overlay: string;
+      brown1Hover: string;
+      brown2Hover: string;
+      brown3Hover: string;
+      brown4Hover: string;
+      brown5Hover: string;
       yellow1: string;
       bold: string;
       lowkey: string;
