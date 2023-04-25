@@ -119,7 +119,13 @@ export const DropdownMenuMain = styled("div")`
   height: 100vh;
   box-sizing: border-box;
   z-index: 10000;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${({ theme }) => {
+    if (theme.name === "light") {
+      return "rgba(0, 0, 0, 0.8);";
+    } else {
+      return "rgba(255, 255, 255, 0.8);";
+    }
+  }};
   position: fixed;
   top: 0;
   left: 0;
