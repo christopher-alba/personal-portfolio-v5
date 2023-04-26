@@ -48,3 +48,8 @@ export const Text = styled("p")`
   z-index: 3;
   position: relative;
 `;
+
+export const Emphasize = styled("span")`
+  font-size: 2rem;
+  font-weight: 900;
+`;
