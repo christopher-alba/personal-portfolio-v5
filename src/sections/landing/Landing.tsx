@@ -13,6 +13,7 @@ import {
   StyledHR,
   WorksAt,
   StyledP,
+  MadeInTextWrapper,
 } from "./styled";
 import { ButtonBrown4 } from "../../components/buttons";
 
@@ -20,7 +21,9 @@ const Landing: FC = () => {
   return (
     <MainDiv>
       <LeftDiv>
-        <MadeInText />
+        <MadeInTextWrapper>
+          <MadeInText />
+        </MadeInTextWrapper>
         <div style={{ position: "relative", width: "100%" }}>
           <Image src="./images/jasper2.jpg" />
           <Pattern1SVG />

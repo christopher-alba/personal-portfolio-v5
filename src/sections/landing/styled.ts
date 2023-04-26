@@ -21,12 +21,31 @@ export const LeftDiv = styled("div")`
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
+  position: relative;
 `;
-
+export const MadeInTextWrapper = styled("div")`
+  height: 80%;
+  background: ${({ theme }) => theme.colors.brown1};
+  position: absolute;
+  left: -1px;
+  top: 0;
+  z-index: 1;
+  clip-path: polygon(100% 0, 100% 95%, 0 100%, 0 100%, 0 0);
+  @media (max-width: ${bp3}px) {
+    position: static;
+    top: unset;
+    left: unset;
+    background: transparent;
+    height: unset;
+    clip-path: none;
+  }
+`;
 export const MadeInText = styled(MadeIn2023)`
   margin-right: 10px;
   margin-top: 50px;
-  width: 100px;
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
   box-sizing: border-box;
   height: 250px;
   z-index: 1;
