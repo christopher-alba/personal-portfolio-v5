@@ -19,7 +19,7 @@ import { ButtonBrown4 } from "../../components/buttons";
 
 const Landing: FC = () => {
   return (
-    <MainDiv>
+    <MainDiv id="landing">
       <LeftDiv>
         <MadeInTextWrapper>
           <MadeInText />

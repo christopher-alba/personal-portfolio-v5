@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import {
   BarsSVG,
   ButtonsDiv,
@@ -31,6 +31,15 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      hideNavbar();
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const viewportWidth = useViewportWidth();
   const theme = useContext(ThemeContext);
   const springs = useSpring({
@@ -43,6 +52,12 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
     } else {
       setTheme(themes.light);
     }
+  };
+  const hideNavbar = () => {
+    setShowMenu(false);
+    setTimeout(() => {
+      setShowDropdown(false);
+    }, 500);
   };
   if (viewportWidth >= mobileNavBreakpoint) {
     return (
@@ -77,14 +92,7 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
               <NavMenuContent />
             </DropdownMenu>
             <CloseButtonDiv as={animated.div} style={{ ...springs } as any}>
-              <CloseButton
-                onClick={() => {
-                  setShowMenu(false);
-                  setTimeout(() => {
-                    setShowDropdown(false);
-                  }, 500);
-                }}
-              >
+              <CloseButton onClick={hideNavbar}>
                 <CloseIcon />
               </CloseButton>
             </CloseButtonDiv>
@@ -95,7 +103,12 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   }
 };
 
-const NavMenuContent = () => {
+const NavMenuContent: FC = () => {
+  const handleJump = (target: string) => {
+    document.getElementById(target)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <IconsDiv>
@@ -129,10 +142,10 @@ const NavMenuContent = () => {
         </StyledAnchor>
       </IconsDiv>
       <ButtonsDiv>
-        <JumpButton>
+        <JumpButton onClick={() => handleJump("landing")}>
           <strong>0.</strong>Landing
         </JumpButton>
-        <JumpButton>
+        <JumpButton onClick={() => handleJump("about")}>
           <strong>1.</strong>About
         </JumpButton>
         <JumpButton>
