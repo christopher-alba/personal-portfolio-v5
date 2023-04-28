@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 const TitleWrapper = styled("div")`
   position: relative;
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
 `;
 const TitleText = styled("h1")`
   margin-top: 150px;
@@ -14,6 +17,12 @@ const TitleText = styled("h1")`
   font-family: "Inter", "Serif";
   z-index: 1;
   font-weight: 900;
+  @media (max-width: 1300px) {
+    margin-top: 50px;
+  }
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 `;
 const TitleNumber = styled("p")`
   position: absolute;
@@ -23,6 +32,10 @@ const TitleNumber = styled("p")`
   margin: 0;
   font-weight: 900;
   color: ${({ theme }) => theme.colors.lowkey};
+  @media (max-width: 1300px) {
+    line-height: 10rem;
+    font-size: 15rem;
+  }
 `;
 const StyledHR = styled("hr")`
   width: 25%;
@@ -38,6 +51,9 @@ const Wrapper = styled("div")`
   position: relative;
   left: 100px;
   width: fit-content;
+  @media (max-width: 600px) {
+    left: unset;
+  }
 `;
 
 const Title: FC<{ text: string; number: number }> = ({ text, number }) => {

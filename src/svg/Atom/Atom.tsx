@@ -1,10 +1,19 @@
 import { FC, useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
+const bp1 = 1800;
+const bp2 = 1400;
 
 const SVG = styled("svg")`
   width: fit-content;
   position: relative;
   z-index: 2;
+  @media (max-width: ${bp1}px) {
+    width: 400px;
+  }
+  @media (max-width: ${bp2}px) {
+    width: 300px;
+    height: auto;
+  }
 `;
 
 const Atom: FC = (props) => {

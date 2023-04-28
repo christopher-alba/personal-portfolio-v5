@@ -7,6 +7,7 @@ import {
   Header,
   Image,
   Image2,
+  Image2Wrapper,
   ImageWrapper,
   Text,
   TextWrapper,
@@ -19,8 +20,12 @@ const About: FC = () => {
       <Header>
         <Title text="About Me" number={1} />
         <ImageWrapper>
-          <Image src="./images/profileImage.png" />
-          <Image2 src="./images/jasper1.jpg" />
+          <div>
+            <Image src="./images/profileImage.png" />
+          </div>
+          <Image2Wrapper>
+            <Image2 src="./images/jasper1.jpg" />
+          </Image2Wrapper>
           <AtomWrapper>
             <Atom />
           </AtomWrapper>
