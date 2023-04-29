@@ -19,9 +19,10 @@ const TitleText = styled("h1")`
   font-weight: 900;
   @media (max-width: 1300px) {
     margin-top: 50px;
+    font-size: 2rem;
   }
   @media (max-width: 600px) {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 `;
 const TitleNumber = styled("p")`

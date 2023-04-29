@@ -3,16 +3,15 @@ import { SectionMainDiv } from "../../components/section";
 import Title from "../../components/Title";
 import {
   AtomWrapper,
-  Emphasize,
   Header,
   Image,
   Image2,
   Image2Wrapper,
   ImageWrapper,
-  Text,
   TextWrapper,
 } from "./styled";
 import Atom from "../../svg/Atom/Atom";
+import { Emphasize, Text } from "../../components/text";
 
 const About: FC = () => {
   return (

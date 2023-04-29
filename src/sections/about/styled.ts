@@ -9,7 +9,7 @@ export const Header = styled("div")`
 `;
 export const ImageWrapper = styled("div")`
   position: relative;
-  width: 60%;
+  width: 55%;
   height: 20rem;
   display: flex;
   @media (max-width: 1300px) {
@@ -71,20 +71,11 @@ export const TextWrapper = styled("div")`
   position: relative;
   @media (max-width: 1300px) {
     margin-top: 50px;
+    background: transparent;
   }
   @media (max-width: 1000px) {
     width: 100%;
     margin-right: 0;
     padding: 0;
   }
-`;
-
-export const Text = styled("p")`
-  z-index: 3;
-  position: relative;
-`;
-
-export const Emphasize = styled("span")`
-  font-size: 2rem;
-  font-weight: 900;
 `;

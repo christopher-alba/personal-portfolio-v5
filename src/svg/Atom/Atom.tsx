@@ -2,6 +2,7 @@ import { FC, useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
 const bp1 = 1800;
 const bp2 = 1400;
+const bp3 = 1300;
 
 const SVG = styled("svg")`
   width: fit-content;
@@ -12,6 +13,8 @@ const SVG = styled("svg")`
   }
   @media (max-width: ${bp2}px) {
     width: 300px;
+  }
+  @media (max-width: ${bp3}px) {
     height: auto;
   }
 `;
