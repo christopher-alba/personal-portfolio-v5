@@ -2,13 +2,13 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import themes from "./themes/schema.json";
 import { GlobalStyles } from "./themes/globalStyles";
-import Landing from "./sections/Landing";
+import Landing from "./sections/landing";
 import Menu from "./components/Menu";
 import styled from "styled-components";
 import { Container } from "./components/container";
 import { NavbarWidth, mobileNavBreakpoint } from "./sizes";
-import About from "./sections/About";
-import Journey from "./sections/Journey";
+import About from "./sections/about";
+import Journey from "./sections/journey";
 export const ContentDiv = styled("div")`
   width: 100%;
   padding-left: ${NavbarWidth};
