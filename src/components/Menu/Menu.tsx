@@ -25,6 +25,8 @@ import { mobileNavBreakpoint } from "../../sizes";
 import { DefaultTheme, ThemeContext } from "styled-components";
 import themes from "../../themes/schema.json";
 import { useSpring, animated } from "@react-spring/web";
+import { ContentDiv } from "../../App";
+import { Container } from "../container";
 
 const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   setTheme,
@@ -62,9 +64,13 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   if (viewportWidth >= mobileNavBreakpoint) {
     return (
       <>
-        <ThemeButton onClick={toggleTheme}>
-          {theme.name === "light" ? "Dark Mode" : "Light Mode"}
-        </ThemeButton>
+        <ContentDiv style={{ position: "fixed", top: 0, zIndex: 1000 }}>
+          <Container style={{ display: "flex", justifyContent: "flex-end" }}>
+            <ThemeButton onClick={toggleTheme}>
+              {theme.name === "light" ? "Dark Mode" : "Light Mode"}
+            </ThemeButton>
+          </Container>
+        </ContentDiv>
         <MainDiv>
           <NavMenuContent />
         </MainDiv>

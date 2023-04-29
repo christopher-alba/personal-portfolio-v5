@@ -143,7 +143,7 @@ export const Number0 = styled("p")`
 `;
 
 export const Name = styled("h1")`
-  font-size: 6.5rem;
+  font-size: 5.5rem;
   font-weight: 900;
   margin-top: 200px;
   margin-bottom: 0;

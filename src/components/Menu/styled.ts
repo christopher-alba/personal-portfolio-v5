@@ -79,20 +79,18 @@ export const JumpButton = styled("button")`
 `;
 
 export const ThemeButton = styled("button")`
-  position: fixed;
+  position: relative;
   top: 0;
-  right: 0;
   background: ${({ theme }) => theme.colors.brown4};
-  color: ${({ theme }) => theme.colors.brown1};
   border: none;
+  border-top: none;
+  color: ${({ theme }) => theme.colors.brown1};
   padding: 10px 25px;
   transition: 500ms;
   width: 150px;
   padding-left: 35px;
   cursor: pointer;
-  clip-path: polygon(100% 0, 100% 100%, 21% 100%, 0 40%, 0 0);
   &:hover {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 66%, 0 0);
     background: ${({ theme }) => theme.colors.brown4Hover};
     padding-left: 25px;
   }
