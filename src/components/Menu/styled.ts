@@ -58,7 +58,7 @@ export const StyledAnchor = styled("a")`
   margin-top: 30px;
   color: inherit;
   &:hover {
-    color: ${({ theme }) => theme.colors.secondary1};
+    color: ${({ theme }) => theme.colors.tertiary1};
   }
 `;
 
@@ -75,7 +75,7 @@ export const JumpButton = styled("button")`
   border-right: 5px solid transparent;
   width: 100%;
   &:hover {
-    border-right: 5px solid ${({ theme }) => theme.colors.secondary1};
+    border-right: 5px solid ${({ theme }) => theme.colors.tertiary1};
   }
 `;
 
@@ -91,7 +91,7 @@ export const ThemeButton = styled("button")`
   width: fit-content;
   cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.colors.secondary1};
+    color: ${({ theme }) => theme.colors.tertiary1};
   }
 `;
 

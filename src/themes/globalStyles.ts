@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.colors.primary1};
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.secondary1} !important;
-    font-family:  'Times New Roman', Times, serif;
+    font-family: "Inter" ,Arial, Helvetica, sans-serif;
     margin:0;
     &::-webkit-scrollbar-track
     {

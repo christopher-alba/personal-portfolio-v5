@@ -23,9 +23,7 @@ function App() {
       <GlobalStyles />
       <Menu setTheme={setTheme} />
       <ContentDiv>
-        <Container>
-          <Landing />
-        </Container>
+        <Landing />
       </ContentDiv>
     </ThemeProvider>
   );
