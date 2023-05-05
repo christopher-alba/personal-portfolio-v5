@@ -6,6 +6,7 @@ import {
   Name,
   Occupation,
   OverlayDiv,
+  StyledLink,
   SubTitle,
 } from "./styled";
 import { TertiaryButton } from "../../components/buttons";
@@ -20,9 +21,9 @@ const Landing: FC = () => {
         <Occupation>Professional Software Engineer</Occupation>
         <SubTitle>Frontend Engineering Focused</SubTitle>
         <SubTitle> User Experience Driven</SubTitle>
-        <TertiaryButton style={{ marginTop: "20px", width: "fit-content" }}>
-          Download CV
-        </TertiaryButton>
+        <StyledLink to="./cv.pdf" target="_blank" rel="noopener noreferrer">
+          <TertiaryButton tabIndex={-1}>Download CV</TertiaryButton>
+        </StyledLink>
       </ContentWrapper>
     </MainDiv>
   );

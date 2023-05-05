@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MainDiv = styled("div")`
@@ -51,10 +52,10 @@ export const ContentWrapper = styled("div")`
     width: 100%;
     padding-right: 150px;
   }
-  @media(max-width: 800px){
+  @media (max-width: 800px) {
     padding: 100px;
   }
-  @media(max-width: 500px){
+  @media (max-width: 500px) {
     padding: 20px;
   }
 `;
@@ -64,8 +65,8 @@ export const Name = styled("h1")`
   font-weight: 900;
   margin: 0;
   margin-bottom: 20px;
-  @media (max-width:800px) {
-    font-size:3rem;
+  @media (max-width: 800px) {
+    font-size: 3rem;
   }
 `;
 
@@ -78,4 +79,9 @@ export const SubTitle = styled("h3")`
   text-emphasis: 10px;
   margin: 0;
   font-weight: 200;
+`;
+
+export const StyledLink = styled(Link)`
+  width: fit-content;
+  margin-top: 20px;
 `;

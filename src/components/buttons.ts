@@ -5,6 +5,7 @@ export const TertiaryButton = styled("button")`
   border: none;
   border-radius: 5px;
   padding: 10px 30px;
+  cursor: pointer;
   color: ${({ theme }) => theme.colors.primary1};
   &:hover {
     background: ${({ theme }) => theme.colors.tertiary2};
