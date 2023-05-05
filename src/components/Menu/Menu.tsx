@@ -16,17 +16,16 @@ import {
   MainDiv,
   MenuButton,
   MobileMainDiv,
-  MobileThemeButton,
   StyledAnchor,
+  StyledHR,
   ThemeButton,
+  ThemeIcon,
 } from "./styled";
 import useViewportWidth from "../../hooks/useViewportWidth";
 import { mobileNavBreakpoint } from "../../sizes";
 import { DefaultTheme, ThemeContext } from "styled-components";
 import themes from "../../themes/schema.json";
 import { useSpring, animated } from "@react-spring/web";
-import { ContentDiv } from "../../App";
-import { Container } from "../container";
 
 const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   setTheme,
@@ -63,18 +62,9 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   };
   if (viewportWidth >= mobileNavBreakpoint) {
     return (
-      <>
-        <ContentDiv style={{ position: "fixed", top: 0, zIndex: 1000 }}>
-          <Container style={{ display: "flex", justifyContent: "flex-end" }}>
-            <ThemeButton onClick={toggleTheme}>
-              {theme.name === "light" ? "Dark Mode" : "Light Mode"}
-            </ThemeButton>
-          </Container>
-        </ContentDiv>
-        <MainDiv>
-          <NavMenuContent />
-        </MainDiv>
-      </>
+      <MainDiv>
+        <NavMenuContent toggleTheme={toggleTheme} />
+      </MainDiv>
     );
   } else {
     return (
@@ -88,14 +78,11 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
           >
             <BarsSVG />
           </MenuButton>
-          <MobileThemeButton onClick={toggleTheme}>
-            {theme.name === "light" ? "Dark Mode" : "Light Mode"}
-          </MobileThemeButton>
         </MobileMainDiv>
         {showDropdown && (
           <DropdownMenuMain>
             <DropdownMenu as={animated.div} style={{ ...springs } as any}>
-              <NavMenuContent />
+              <NavMenuContent toggleTheme={toggleTheme} />
             </DropdownMenu>
             <CloseButtonDiv as={animated.div} style={{ ...springs } as any}>
               <CloseButton onClick={hideNavbar}>
@@ -109,7 +96,9 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   }
 };
 
-const NavMenuContent: FC = () => {
+const NavMenuContent: FC<{ toggleTheme: () => void }> = ({
+  toggleTheme,
+}) => {
   const handleJump = (target: string) => {
     document.getElementById(target)?.scrollIntoView({
       behavior: "smooth",
@@ -148,6 +137,10 @@ const NavMenuContent: FC = () => {
         </StyledAnchor>
       </IconsDiv>
       <ButtonsDiv>
+        <ThemeButton onClick={toggleTheme}>
+          <ThemeIcon />
+        </ThemeButton>
+        <StyledHR />
         <JumpButton onClick={() => handleJump("landing")}>
           <strong>0.</strong>Landing
         </JumpButton>

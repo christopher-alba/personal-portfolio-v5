@@ -6,11 +6,12 @@ import { ReactComponent as Github } from "../../svg/icons/githubIcon.svg";
 import { ReactComponent as Linkedin } from "../../svg/icons/linkedinIcon.svg";
 import { ReactComponent as Bars } from "../../svg/icons/bars-solid.svg";
 import { ReactComponent as XMark } from "../../svg/icons/xmark-solid.svg";
+import { ReactComponent as Theme } from "../../svg/icons/theme.svg";
 
 export const MainDiv = styled("div")`
   width: ${NavbarWidth};
   height: 100vh;
-  border-right: 1px solid ${({ theme }) => theme.colors.brown3Overlay};
+  background: ${({ theme }) => theme.colors.primary4};
   position: fixed;
   top: 0;
   left: 0;
@@ -57,7 +58,7 @@ export const StyledAnchor = styled("a")`
   margin-top: 30px;
   color: inherit;
   &:hover {
-    color: ${({ theme }) => theme.colors.brown4Hover};
+    color: ${({ theme }) => theme.colors.secondary1};
   }
 `;
 
@@ -65,48 +66,35 @@ export const JumpButton = styled("button")`
   background: none;
   border: none;
   text-align: left;
-  padding: 20px;
+  padding: 10px 20px;
   transition: 500ms;
-  color: ${({ theme }) => theme.colors.brown4};
+  color: ${({ theme }) => theme.colors.secondary1};
   &:last-of-type {
     margin-bottom: 20px;
   }
   border-right: 5px solid transparent;
   width: 100%;
   &:hover {
-    border-right: 5px solid ${({ theme }) => theme.colors.brown4};
+    border-right: 5px solid ${({ theme }) => theme.colors.secondary1};
   }
 `;
 
 export const ThemeButton = styled("button")`
   position: relative;
   top: 0;
-  background: ${({ theme }) => theme.colors.brown4};
+  background: transparent;
   border: none;
   border-top: none;
-  color: ${({ theme }) => theme.colors.brown1};
+  color: ${({ theme }) => theme.colors.secondary1};
   padding: 10px 25px;
   transition: 500ms;
-  width: 150px;
-  padding-left: 35px;
+  width: fit-content;
   cursor: pointer;
   &:hover {
-    background: ${({ theme }) => theme.colors.brown4Hover};
-    padding-left: 25px;
-  }
-  z-index: 1000;
-`;
-export const MobileThemeButton = styled("button")`
-  background: ${({ theme }) => theme.colors.brown4};
-  color: ${({ theme }) => theme.colors.brown1};
-  border: none;
-  padding: 10px 25px;
-  transition: 500ms;
-  cursor: pointer;
-  &:hover {
-    background: ${({ theme }) => theme.colors.brown4Hover};
+    color: ${({ theme }) => theme.colors.secondary1};
   }
 `;
+
 export const MobileMainDiv = styled("div")`
   padding: 10px;
   position: fixed;
@@ -118,7 +106,7 @@ export const MobileMainDiv = styled("div")`
   height: 50px;
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.colors.brown1};
+  background: ${({ theme }) => theme.colors.primary4};
   justify-content: space-between;
 `;
 
@@ -127,9 +115,9 @@ export const MenuButton = styled("button")`
   border: none;
   padding: 10px;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.brown4};
+  color: ${({ theme }) => theme.colors.secondary1};
   &:hover {
-    color: ${({ theme }) => theme.colors.brown4Hover};
+    color: ${({ theme }) => theme.colors.secondary1};
   }
 `;
 
@@ -166,7 +154,7 @@ export const DropdownMenu = styled("div")`
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  background: ${({ theme }) => theme.colors.brown1};
+  background: ${({ theme }) => theme.colors.primary1};
 `;
 
 export const CloseButtonDiv = styled("div")`
@@ -188,7 +176,20 @@ export const CloseButton = styled("button")`
   cursor: pointer;
   border: none;
   padding: 10px;
-  color: ${({ theme }) => theme.colors.brown1};
+  color: ${({ theme }) => theme.colors.primary1};
 `;
 
 export const CloseIcon = styled(XMark)``;
+
+export const StyledHR = styled("hr")`
+  margin: 10px;
+  width: 70%;
+  box-sizing: border-box;
+  border-width: 3px;
+  border-style: solid;
+`;
+
+export const ThemeIcon = styled(Theme)`
+  width: 20px;
+  height: auto;
+`;

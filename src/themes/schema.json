@@ -1,42 +1,28 @@
 {
-    "light": {
-        "name": "light",
-        "colors": {
-            "brown1": "#FFFBED",
-            "brown2": "#FFF4DD",
-            "brown3": "#54493C",
-            "brown4": "#826F59",
-            "brown5": "#C3B8A6",
-            "brown1Overlay": "#FFFBEDCC",
-            "brown3Overlay": "#826F59CC",
-            "brown1Hover": "#FFF3C9",
-            "brown2Hover": "#FFE8B9",
-            "brown3Hover": "#533B1F",
-            "brown4Hover": "#866743",
-            "brown5Hover": "#C3A573",
-            "yellow1": "#FFEEB3",
-            "bold": "black",
-            "lowkey": "#FFF2E3"
-        }
-    },
-    "dark": {
-        "name": "dark",
-        "colors": {
-            "brown1": "#54493C",
-            "brown2": "#2D251C",
-            "brown3": "#826F59",
-            "brown4": "#FFFBED",
-            "brown5": "#C3B8A6",
-            "brown1Overlay": "#54483BCC",
-            "brown3Overlay": "#826F59CC",
-            "brown1Hover": "#584024",
-            "brown2Hover": "#2E2010",
-            "brown3Hover": "#866743",
-            "brown4Hover": "#FFE8B9",
-            "brown5Hover": "#C3A573",
-            "yellow1": "#FFEEB3",
-            "bold": "white",
-            "lowkey": "#5E5245"
-        }
+  "light": {
+    "name": "light",
+    "colors": {
+      "primary1": "white",
+      "primary2": "#F3F3F3",
+      "primary3": "#E7E7E7",
+      "primary4": "#F9F9F9",
+      "secondary1": "black",
+      "secondary2": "#6F6F6F",
+      "tertiary1": "#FFA800",
+      "tertiary2": "#FFD584"
     }
+  },
+  "dark": {
+    "name": "dark",
+    "colors": {
+      "primary1": "black",
+      "primary2": "#6F6F6F",
+      "primary3": "#4A4A4A",
+      "primary4": "#1A1A1A",
+      "secondary1": "white",
+      "secondary2": "#D9D9D9",
+      "tertiary1": "#FFA800",
+      "tertiary2": "#FFD584"
+    }
+  }
 }
