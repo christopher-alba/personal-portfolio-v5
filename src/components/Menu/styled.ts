@@ -68,6 +68,7 @@ export const JumpButton = styled("button")`
   text-align: left;
   padding: 10px 20px;
   transition: 500ms;
+  white-space: nowrap;
   color: ${({ theme }) => theme.colors.secondary1};
   &:last-of-type {
     margin-bottom: 20px;

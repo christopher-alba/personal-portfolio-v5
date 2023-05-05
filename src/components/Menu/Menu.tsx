@@ -96,9 +96,7 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   }
 };
 
-const NavMenuContent: FC<{ toggleTheme: () => void }> = ({
-  toggleTheme,
-}) => {
+const NavMenuContent: FC<{ toggleTheme: () => void }> = ({ toggleTheme }) => {
   const handleJump = (target: string) => {
     document.getElementById(target)?.scrollIntoView({
       behavior: "smooth",
@@ -142,19 +140,19 @@ const NavMenuContent: FC<{ toggleTheme: () => void }> = ({
         </ThemeButton>
         <StyledHR />
         <JumpButton onClick={() => handleJump("landing")}>
-          <strong>0.</strong>Landing
+          <strong>0. </strong>Landing
         </JumpButton>
         <JumpButton onClick={() => handleJump("about")}>
-          <strong>1.</strong>About
+          <strong>1. </strong>About
         </JumpButton>
         <JumpButton>
-          <strong>2.</strong>Journey
+          <strong>2. </strong>Journey
         </JumpButton>
         <JumpButton>
-          <strong>3.</strong>Projects
+          <strong>3. </strong>Projects
         </JumpButton>
         <JumpButton>
-          <strong>4.</strong>Contact
+          <strong>4. </strong>Contact
         </JumpButton>
       </ButtonsDiv>
     </>

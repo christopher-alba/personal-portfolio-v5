@@ -5,7 +5,6 @@ import { GlobalStyles } from "./themes/globalStyles";
 import Landing from "./sections/landing";
 import Menu from "./components/Menu";
 import styled from "styled-components";
-import { Container } from "./components/container";
 import { NavbarWidth, mobileNavBreakpoint } from "./sizes";
 export const ContentDiv = styled("div")`
   width: 100%;
