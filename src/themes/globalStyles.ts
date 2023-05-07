@@ -4,6 +4,10 @@ export const GlobalStyles = createGlobalStyle`
   #root-wrapper{
     overflow-x:hidden;
   }
+  p {
+    font-size: 0.8rem;
+    font-weight: 200;
+  }
   body {
     background: ${({ theme }) => theme.colors.primary2};
     background-attachment: fixed;

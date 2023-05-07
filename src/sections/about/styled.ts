@@ -1,5 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as GradIcon } from "../../svg/icons/gradIcon.svg";
+import { ReactComponent as LaptopIcon } from "../../svg/icons/laptop.svg";
+import { ReactComponent as GraphIcon } from "../../svg/icons/Graph.svg";
+import { ReactComponent as UsersIcon } from "../../svg/icons/usersIcon.svg";
+
 export const ContentWrapper = styled("div")`
   padding: 50px;
   padding-top: 20px;
@@ -30,10 +34,14 @@ export const TextWrapper = styled("div")`
   }
 `;
 
-export const GradIconStyled = styled(GradIcon)`
-  width: 50px;
+const TitleIconStyles = css`
+  width: 30px;
   height: auto;
   padding-right: 20px;
+`;
+
+export const GradIconStyled = styled(GradIcon)`
+  ${TitleIconStyles}
 `;
 
 export const CarouselWrapper = styled("div")`
@@ -43,4 +51,16 @@ export const CarouselWrapper = styled("div")`
   @media (max-width: 900px) {
     width: 100%;
   }
+`;
+
+export const LaptopIconSVG = styled(LaptopIcon)`
+  ${TitleIconStyles}
+`;
+
+export const GraphIconSVG = styled(GraphIcon)`
+  ${TitleIconStyles}
+`;
+
+export const UsersIconSVG = styled(UsersIcon)`
+  ${TitleIconStyles}
 `;
