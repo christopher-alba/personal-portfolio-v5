@@ -85,6 +85,10 @@ export const ModalImage = styled("img")`
   margin: 0 auto;
   height: 80%;
   object-fit: cover;
+  @media (max-width: 600px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const IconButton = styled("button")`
