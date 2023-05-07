@@ -14,7 +14,7 @@ import { TertiaryButton } from "../../components/buttons";
 const Landing: FC = () => {
   return (
     <MainDiv id="landing">
-      <InvertedImage src="./images/jasper2.jpg" />
+      <InvertedImage/>
       <OverlayDiv />
       <ContentWrapper>
         <Name>Christopher Sy Alba</Name>

@@ -10,15 +10,20 @@ export const MainDiv = styled("div")`
   overflow: hidden;
 `;
 
-export const InvertedImage = styled("img")`
+export const InvertedImage = styled("div")`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-  object-position: 0 0;
-  object-fit: cover;
+  background: url("./images/grad2-min.JPG");
+  background-position: 0 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: 700px) {
+    background-position: center;
+  }
 `;
 
 export const OverlayDiv = styled("div")`

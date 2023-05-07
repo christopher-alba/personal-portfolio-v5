@@ -5,8 +5,4 @@ export const SectionMainDiv = styled("div")`
   box-sizing: border-box;
   position: relative;
   padding-top: 100px;
-  @media (max-width: 1000px) {
-    width: 90%;
-    margin: 0 auto;
-  }
 `;

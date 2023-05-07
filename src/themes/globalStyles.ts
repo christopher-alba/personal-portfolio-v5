@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x:hidden;
   }
   body {
-    background: ${({ theme }) => theme.colors.primary1};
+    background: ${({ theme }) => theme.colors.primary2};
     background-attachment: fixed;
     color: ${({ theme }) => theme.colors.secondary1} !important;
     font-family: "Inter" ,Arial, Helvetica, sans-serif;

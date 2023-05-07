@@ -1,0 +1,46 @@
+import styled from "styled-components";
+import { ReactComponent as GradIcon } from "../../svg/icons/gradIcon.svg";
+export const ContentWrapper = styled("div")`
+  padding: 50px;
+  padding-top: 20px;
+  @media (max-width: 800px) {
+    padding: 10px;
+  }
+`;
+export const InnerContentWrapper = styled("div")`
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 50px;
+  border-bottom: solid 1px ${({ theme }) => theme.colors.secondary1};
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+  }
+`;
+export const TextWrapper = styled("div")`
+  width: 50%;
+  padding-right: 20px;
+  box-sizing: border-box;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.8rem;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+`;
+
+export const GradIconStyled = styled(GradIcon)`
+  width: 50px;
+  height: auto;
+  padding-right: 20px;
+`;
+
+export const CarouselWrapper = styled("div")`
+  width: 50%;
+  height: fit-content;
+  margin-top: 30px;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+`;
