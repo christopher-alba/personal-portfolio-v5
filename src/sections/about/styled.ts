@@ -3,6 +3,7 @@ import { ReactComponent as GradIcon } from "../../svg/icons/gradIcon.svg";
 import { ReactComponent as LaptopIcon } from "../../svg/icons/laptop.svg";
 import { ReactComponent as GraphIcon } from "../../svg/icons/Graph.svg";
 import { ReactComponent as UsersIcon } from "../../svg/icons/usersIcon.svg";
+import { ReactComponent as TickTech } from "../../svg/icons/TickTech.svg";
 
 export const ContentWrapper = styled("div")`
   padding: 50px;
@@ -62,5 +63,9 @@ export const GraphIconSVG = styled(GraphIcon)`
 `;
 
 export const UsersIconSVG = styled(UsersIcon)`
+  ${TitleIconStyles}
+`;
+
+export const TickTechSVG = styled(TickTech)`
   ${TitleIconStyles}
 `;
