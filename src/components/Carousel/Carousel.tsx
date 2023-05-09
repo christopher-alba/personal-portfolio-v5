@@ -43,7 +43,7 @@ const CarouselImageModal: FC<{
       <ModalImage src={images[index].props.src} />
       <ControlsDiv>
         <ButtonsWrapper>
-          {images.map((child, selectedIndex) => {
+          {images.map((_child, selectedIndex) => {
             return (
               <CircleButton
                 style={{
@@ -123,7 +123,7 @@ const Carousel: FC<{ children: ReactElement[] }> = ({ children }) => {
         </ItemDiv>
         <ControlsDiv>
           <ButtonsWrapper>
-            {children.map((child, selectedIndex) => {
+            {children.map((_child, selectedIndex) => {
               return (
                 <CircleButton
                   style={{

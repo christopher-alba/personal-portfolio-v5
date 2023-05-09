@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode } from "react";
 import SubSectionTitle from "./SubSectionTitle";
 import styled from "styled-components";
 import { ReactComponent as DownIcon } from "../svg/icons/chevronDown.svg";

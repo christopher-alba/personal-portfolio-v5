@@ -48,9 +48,11 @@ export const GradIconStyled = styled(GradIcon)`
 export const CarouselWrapper = styled("div")`
   width: 50%;
   height: fit-content;
+  margin-left: 50px;
   margin-top: 30px;
   @media (max-width: 900px) {
     width: 100%;
+    margin-left: 0;
   }
 `;
 

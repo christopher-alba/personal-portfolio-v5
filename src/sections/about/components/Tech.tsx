@@ -97,17 +97,17 @@ const InnerContentWrapper = styled("div")`
   right: -20px;
 `;
 const GradIconSVG = styled(GradIcon)`
-  height: 20px;
+  height: 10px;
   width: auto;
   margin-right: 5px;
 `;
 const PracticalIconSVG = styled(PracticalIcon)`
-  height: 20px;
+  height: 10px;
   width: auto;
   margin-right: 5px;
 `;
 const MoneyIconSVG = styled(MoneyIcon)`
-  height: 20px;
+  height: 10px;
   width: auto;
   margin-right: 5px;
 `;
@@ -200,7 +200,8 @@ const IconsWrapper = styled("div")`
   align-items: flex-end;
   justify-content: space-between;
   flex-grow: 1;
-  margin-left: 7%;
+  margin-left: 3%;
+  padding-bottom: 3px;
 `;
 const BarDivOuter = styled("div")`
   background: ${({ theme }) => theme.colors.primary3};
