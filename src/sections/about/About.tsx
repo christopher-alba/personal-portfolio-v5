@@ -75,7 +75,7 @@ const accordionContent = [
 
 const About: FC = () => {
   return (
-    <SectionMainDiv>
+    <SectionMainDiv id="about">
       <Container>
         <Title text="About" />
         <ContentWrapper>

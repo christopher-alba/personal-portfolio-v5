@@ -145,14 +145,11 @@ const NavMenuContent: FC<{ toggleTheme: () => void }> = ({ toggleTheme }) => {
         <JumpButton onClick={() => handleJump("about")}>
           <strong>1. </strong>About
         </JumpButton>
-        <JumpButton>
+        <JumpButton onClick={() => handleJump("journey")}>
           <strong>2. </strong>Journey
         </JumpButton>
-        <JumpButton>
+        <JumpButton onClick={() => handleJump("projects")}>
           <strong>3. </strong>Projects
-        </JumpButton>
-        <JumpButton>
-          <strong>4. </strong>Contact
         </JumpButton>
       </ButtonsDiv>
     </>

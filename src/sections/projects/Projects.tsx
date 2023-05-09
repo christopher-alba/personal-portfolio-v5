@@ -7,7 +7,7 @@ import { projects } from "./data";
 import Accordion from "../../components/Accordion";
 const Projects: FC = () => {
   return (
-    <BackgroundDiv>
+    <BackgroundDiv id="projects">
       <Container>
         <Title text="Personal Software Projects" />
         <ProjectsWrapper>

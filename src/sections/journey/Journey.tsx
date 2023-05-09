@@ -124,7 +124,7 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
 
 const Journey: FC = () => {
   return (
-    <SectionMainDiv>
+    <SectionMainDiv id="journey">
       <Container>
         <Title text="My Journey in Web Development" />
         <TimelineWrapper>
