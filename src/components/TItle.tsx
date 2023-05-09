@@ -11,6 +11,8 @@ const StyledHR = styled("hr")`
   border-style: solid;
   border-width: 3px;
   width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
   border-color: ${({ theme }) => theme.colors.tertiary1};
 `;
 

@@ -13,6 +13,7 @@ import {
 import { Company, data } from "./data";
 import { SectionMainDiv } from "../../components/section";
 import { useSpring, animated } from "@react-spring/web";
+import useViewportWidth from "../../hooks/useViewportWidth";
 
 const CompanyCard: FC<{ company: Company; index: number }> = ({
   company,
@@ -20,13 +21,14 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
 }) => {
   const [display, setDisplay] = useState(false);
   const [render, setRender] = useState(false);
+  const width = useViewportWidth();
   const springs = useSpring({
     top: display ? 0 : -10,
     position: "relative",
     opacity: display ? 1 : 0,
   });
   const springs2 = useSpring({
-    height: display ? 300 : 200,
+    height: display ? (width > 600 ? 300 : 500) : 200,
     config: {
       mass: 5,
       tension: 0,

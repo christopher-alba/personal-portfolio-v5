@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { NavbarWidth, mobileNavBreakpoint } from "./sizes";
 import About from "./sections/about";
 import Journey from "./sections/journey";
+import Projects from "./sections/projects";
 export const ContentDiv = styled("div")`
   width: 100%;
   padding-left: ${NavbarWidth};
@@ -27,6 +28,7 @@ function App() {
         <Landing />
         <About />
         <Journey />
+        <Projects />
       </ContentDiv>
     </ThemeProvider>
   );

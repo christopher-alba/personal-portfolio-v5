@@ -4,7 +4,7 @@ import Subsection from "./Subsection";
 const Accordion: FC<{
   sections: {
     titleText: string;
-    Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    Icon?: React.FC<React.SVGProps<SVGSVGElement>>;
     Content: ReactElement;
   }[];
 }> = ({ sections }) => {
