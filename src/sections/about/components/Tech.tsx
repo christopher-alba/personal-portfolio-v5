@@ -156,9 +156,10 @@ const Tech: FC = () => {
       <InnerContentWrapper>
         {technologies
           .sort((a, b) => (a.rating > b.rating ? -1 : 1))
-          .map((technology) => {
+          .map((technology, index) => {
             return (
               <TechBar
+                key={index}
                 name={technology.name}
                 rating={technology.rating}
                 formalEducation={technology.formalEducation}

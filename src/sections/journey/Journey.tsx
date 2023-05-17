@@ -66,8 +66,8 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
             <animated.div style={{ ...springs } as any}>
               <p>{company.summary}</p>
               <div style={{ display: "flex", flexWrap: "wrap" }}>
-                {company.technologies.map((tech) => (
-                  <p style={{ margin: 0, padding: "5px" }}>
+                {company.technologies.map((tech, index) => (
+                  <p key={index} style={{ margin: 0, padding: "5px" }}>
                     <strong>#{tech}</strong>
                   </p>
                 ))}
@@ -108,8 +108,8 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
             <animated.div style={{ ...springs } as any}>
               <p>{company.summary}</p>
               <div style={{ display: "flex", flexWrap: "wrap" }}>
-                {company.technologies.map((tech) => (
-                  <p style={{ margin: 0, padding: "5px" }}>
+                {company.technologies.map((tech, index) => (
+                  <p key={index} style={{ margin: 0, padding: "5px" }}>
                     <strong>#{tech}</strong>
                   </p>
                 ))}
@@ -130,7 +130,7 @@ const Journey: FC = () => {
         <TimelineWrapper>
           <Timeline></Timeline>
           {data.map((company, index) => {
-            return <CompanyCard company={company} index={index} />;
+            return <CompanyCard key={index} company={company} index={index} />;
           })}
         </TimelineWrapper>
       </Container>

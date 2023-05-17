@@ -46,6 +46,7 @@ const CarouselImageModal: FC<{
           {images.map((_child, selectedIndex) => {
             return (
               <CircleButton
+                key={selectedIndex}
                 style={{
                   background:
                     selectedIndex === index
@@ -126,6 +127,7 @@ const Carousel: FC<{ children: ReactElement[] }> = ({ children }) => {
             {children.map((_child, selectedIndex) => {
               return (
                 <CircleButton
+                  key={selectedIndex}
                   style={{
                     background:
                       selectedIndex === index

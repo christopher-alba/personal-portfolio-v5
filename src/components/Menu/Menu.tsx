@@ -55,10 +55,12 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
     }
   };
   const hideNavbar = () => {
-    setShowMenu(false);
-    setTimeout(() => {
-      setShowDropdown(false);
-    }, 500);
+    if (showMenu && showDropdown) {
+      setShowMenu(false);
+      setTimeout(() => {
+        setShowDropdown(false);
+      }, 500);
+    }
   };
   if (viewportWidth >= mobileNavBreakpoint) {
     return (

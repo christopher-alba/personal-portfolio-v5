@@ -11,8 +11,8 @@ const Projects: FC = () => {
       <Container>
         <Title text="Personal Software Projects" />
         <ProjectsWrapper>
-          {projects.map((project) => (
-            <ProjectBox project={project} />
+          {projects.map((project, index) => (
+            <ProjectBox key={index} project={project} />
           ))}
         </ProjectsWrapper>
         <div style={{ marginTop: "50px" }}>
@@ -24,9 +24,10 @@ const Projects: FC = () => {
                 Content: (
                   <div>
                     <div style={{ display: "flex" }}>
-                      {project.github.map((item) => {
+                      {project.github.map((item, index) => {
                         return (
                           <StyledAnchor
+                            key={index}
                             href={item.url}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -44,8 +45,9 @@ const Projects: FC = () => {
                         marginBottom: "30px",
                       }}
                     >
-                      {project.tags.map((tag) => (
+                      {project.tags.map((tag, index) => (
                         <p
+                          key={index}
                           style={{
                             marginTop: 0,
                             marginBottom: 0,
