@@ -26,8 +26,8 @@ export const OverlayWrapper = styled("div")`
   left: 0;
   align-items: center;
   justify-content: center;
-  color: black;
-  background: ${({ theme }) => theme.colors.tertiary2 + "F7"};
+  color: ${({ theme }) => theme.colors.secondary1};
+  background: ${({ theme }) => theme.colors.primary1 + "F3"};
   &:hover {
     opacity: 0;
   }
@@ -36,6 +36,7 @@ export const OverlayWrapper = styled("div")`
 export const Image = styled("img")`
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center;
 `;

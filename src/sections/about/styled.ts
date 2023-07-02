@@ -6,7 +6,6 @@ import { ReactComponent as UsersIcon } from "../../svg/icons/usersIcon.svg";
 import { ReactComponent as TickTech } from "../../svg/icons/TickTech.svg";
 
 export const ContentWrapper = styled("div")`
-  padding: 50px;
   padding-top: 20px;
   @media (max-width: 800px) {
     padding: 10px;

@@ -2,7 +2,7 @@
   "light": {
     "name": "light",
     "colors": {
-      "primary1": "white",
+      "primary1": "#FFFFFF",
       "primary2": "#F3F3F3",
       "primary3": "#E7E7E7",
       "primary4": "#F9F9F9",
@@ -15,7 +15,7 @@
   "dark": {
     "name": "dark",
     "colors": {
-      "primary1": "black",
+      "primary1": "#000000",
       "primary2": "#6F6F6F",
       "primary3": "#4A4A4A",
       "primary4": "#1A1A1A",
