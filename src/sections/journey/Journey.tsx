@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import Title from "../../components/TItle";
 import { Container } from "../../components/container";
 import {
@@ -14,6 +14,7 @@ import { Company, data } from "./data";
 import { SectionMainDiv } from "../../components/section";
 import { useSpring, animated } from "@react-spring/web";
 import useViewportWidth from "../../hooks/useViewportWidth";
+import { useMeasure } from "react-use";
 
 const CompanyCard: FC<{ company: Company; index: number }> = ({
   company,
@@ -21,14 +22,33 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
 }) => {
   const [display, setDisplay] = useState(false);
   const [render, setRender] = useState(false);
+  const [contentHeight, setContentHeight] = useState(200);
+  const [ref, { height }] = useMeasure();
   const width = useViewportWidth();
+  useEffect(() => {
+    //Sets initial height
+    setContentHeight(height);
+
+    //Adds resize event listener
+    window.addEventListener("resize", setContentHeight(height) as any);
+
+    // Clean-up
+    return window.removeEventListener(
+      "resize",
+      setContentHeight(height) as any
+    );
+  }, [height]);
   const springs = useSpring({
     top: display ? 0 : -10,
     position: "relative",
     opacity: display ? 1 : 0,
   });
   const springs2 = useSpring({
-    height: display ? (width > 600 ? 300 : 500) : 200,
+    height: display
+      ? (width > 600 ? 200 : 250) + contentHeight
+      : width > 600
+      ? 200
+      : 250,
     config: {
       mass: 5,
       tension: 0,
@@ -37,33 +57,35 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
   });
   if (index % 2 === 0) {
     return (
-      <TimelineContentLeft as={animated.div} style={{ ...springs2 } as any}>
+      <TimelineContentLeft
+        as={animated.div}
+        style={{ ...springs2 } as any}
+        onClick={() => {
+          if (render) {
+            setDisplay(false);
+            setTimeout(() => {
+              setRender(false);
+            }, 500);
+          } else {
+            setRender(true);
+            setDisplay(true);
+          }
+        }}
+      >
         <TimelineContentInner>
-          <p>{company.dateString}</p>
+          <p style={{ marginTop: 0 }}>{company.dateString}</p>
           <p>{company.position}</p>
           <p>
             <strong>{company.name}</strong>
           </p>
-          <DownButton
-            onClick={() => {
-              if (render) {
-                setDisplay(false);
-                setTimeout(() => {
-                  setRender(false);
-                }, 500);
-              } else {
-                setRender(true);
-                setDisplay(true);
-              }
-            }}
-          >
+          <DownButton>
             <ChevronDownSVG
               style={{ transform: display ? "rotate(180deg)" : "" }}
             />
           </DownButton>
           <hr />
           {render && (
-            <animated.div style={{ ...springs } as any}>
+            <animated.div style={{ ...springs } as any} ref={ref as any}>
               <p>{company.summary}</p>
               <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {company.technologies.map((tech, index) => (
@@ -79,33 +101,35 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
     );
   } else {
     return (
-      <TimelineContentRight as={animated.div} style={{ ...springs2 } as any}>
+      <TimelineContentRight
+        as={animated.div}
+        style={{ ...springs2 } as any}
+        onClick={() => {
+          if (render) {
+            setDisplay(false);
+            setTimeout(() => {
+              setRender(false);
+            }, 500);
+          } else {
+            setRender(true);
+            setDisplay(true);
+          }
+        }}
+      >
         <TimelineContentInner>
-          <p>{company.dateString}</p>
+          <p style={{ marginTop: 0 }}>{company.dateString}</p>
           <p>{company.position}</p>
           <p>
             <strong>{company.name}</strong>
           </p>
-          <DownButton
-            onClick={() => {
-              if (render) {
-                setDisplay(false);
-                setTimeout(() => {
-                  setRender(false);
-                }, 500);
-              } else {
-                setRender(true);
-                setDisplay(true);
-              }
-            }}
-          >
+          <DownButton>
             <ChevronDownSVG
               style={{ transform: display ? "rotate(180deg)" : "" }}
             />
           </DownButton>
           <hr />
           {render && (
-            <animated.div style={{ ...springs } as any}>
+            <animated.div style={{ ...springs } as any} ref={ref as any}>
               <p>{company.summary}</p>
               <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {company.technologies.map((tech, index) => (

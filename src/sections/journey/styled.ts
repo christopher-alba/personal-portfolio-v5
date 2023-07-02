@@ -11,6 +11,7 @@ export const Timeline = styled("div")`
   width: 50%;
   height: 100%;
   position: absolute;
+  top: 1px;
   z-index: -1;
   border-right: 15px solid ${({ theme }) => theme.colors.primary3};
   padding-top: 100px;
@@ -32,6 +33,7 @@ export const TimelineContentLeft = styled("div")`
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
+
   @media (max-width: 800px) {
     width: 100%;
     margin-right: 0;
@@ -53,6 +55,11 @@ export const TimelineContentLeft = styled("div")`
     @media (max-width: 800px) {
       right: unset;
       left: calc(-25px + 15px / 2);
+    }
+  }
+  &:hover {
+    &::after {
+      background: ${({ theme }) => theme.colors.primary1};
     }
   }
   &::before {
@@ -90,12 +97,17 @@ export const TimelineContentRight = styled("div")`
     height: 50px;
     width: 50px;
     position: absolute;
-    background: ${({ theme }) => theme.colors.tertiary1};
+    background: ${({ theme }) => theme.colors.tertiary2};
     top: 0;
     left: calc(-25px + 15px / 2);
     border-radius: 100%;
     box-sizing: border-box;
     border: 10px solid ${({ theme }) => theme.colors.primary3};
+  }
+  &:hover {
+    &::after {
+      background: ${({ theme }) => theme.colors.primary1};
+    }
   }
   &::before {
     content: "";
@@ -103,7 +115,7 @@ export const TimelineContentRight = styled("div")`
     width: 100%;
     transition: 500ms;
     position: absolute;
-    background: ${({ theme }) => theme.colors.tertiary1};
+    background: ${({ theme }) => theme.colors.tertiary2};
     top: 12.5px;
     left: 0;
   }
@@ -111,9 +123,9 @@ export const TimelineContentRight = styled("div")`
 
 export const TimelineContentInner = styled("div")`
   width: 80%;
-  background: ${({ theme }) => theme.colors.primary2};
+  background: ${({ theme }) => theme.colors.primary1};
+  overflow: hidden;
   padding: 30px;
-  padding-top: 0;
   position: relative;
   z-index: 1;
 `;
