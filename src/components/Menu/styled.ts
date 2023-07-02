@@ -11,7 +11,7 @@ import { ReactComponent as Theme } from "../../svg/icons/theme.svg";
 export const MainDiv = styled("div")`
   width: ${NavbarWidth};
   height: 100vh;
-  background: ${({ theme }) => theme.colors.primary4};
+  background: ${({ theme }) => theme.colors.primary1};
   position: fixed;
   top: 0;
   left: 0;

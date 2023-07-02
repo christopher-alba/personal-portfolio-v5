@@ -15,7 +15,7 @@ const Projects: FC = () => {
             <ProjectBox key={index} project={project} />
           ))}
         </ProjectsWrapper>
-        <div style={{ marginTop: "50px" }}>
+        <div style={{ marginTop: "50px", paddingBottom: "50px" }}>
           <Title text="Project Details" />
           <Accordion
             sections={projects.map((project) => {
