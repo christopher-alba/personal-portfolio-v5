@@ -1,8 +1,6 @@
 import { FC } from "react";
 import {
   ContentWrapper,
-  Image,
-  ImagesContainer,
   MainDiv,
   Name,
   Occupation,
