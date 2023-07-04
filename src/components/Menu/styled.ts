@@ -19,6 +19,7 @@ export const MainDiv = styled("div")`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  z-index: 1000;
 `;
 
 export const IconsDiv = styled("div")`
@@ -76,7 +77,7 @@ export const JumpButton = styled("button")`
   border-right: 5px solid transparent;
   width: 100%;
   &:hover {
-    border-right: 5px solid ${({ theme }) => theme.colors.tertiary1};
+    border-right: 5px solid ${({ theme }) => theme.colors.tertiary2} !important;
   }
 `;
 

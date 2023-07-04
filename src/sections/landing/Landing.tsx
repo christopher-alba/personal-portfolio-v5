@@ -10,9 +10,9 @@ import {
 import { TertiaryButton } from "../../components/buttons";
 import FadeWhenInViewWrapper from "../../components/AnimationWrappers/FadeWhenInViewWrapper";
 
-const Landing: FC = () => {
+const Landing: FC<{ refs: React.RefObject<any> }> = ({ refs }) => {
   return (
-    <MainDiv id="landing">
+    <MainDiv id="landing" ref={refs}>
       <ContentWrapper>
         <FadeWhenInViewWrapper animateOnce duration={1000}>
           <Name>Christopher Sy Alba</Name>

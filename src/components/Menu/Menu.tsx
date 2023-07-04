@@ -28,9 +28,10 @@ import themes from "../../themes/schema.json";
 import { useSpring, animated, easings } from "@react-spring/web";
 import FadeWhenInViewWrapper from "../AnimationWrappers/FadeWhenInViewWrapper";
 
-const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
-  setTheme,
-}) => {
+const Menu: FC<{
+  setTheme: (theme: DefaultTheme) => void;
+  currentSection: string;
+}> = ({ setTheme, currentSection }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
@@ -66,7 +67,10 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   if (viewportWidth >= mobileNavBreakpoint) {
     return (
       <MainDiv>
-        <NavMenuContent toggleTheme={toggleTheme} />
+        <NavMenuContent
+          toggleTheme={toggleTheme}
+          currentSection={currentSection}
+        />
       </MainDiv>
     );
   } else {
@@ -85,7 +89,10 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
         {showDropdown && (
           <DropdownMenuMain>
             <DropdownMenu as={animated.div} style={{ ...springs } as any}>
-              <NavMenuContent toggleTheme={toggleTheme} />
+              <NavMenuContent
+                toggleTheme={toggleTheme}
+                currentSection={currentSection}
+              />
             </DropdownMenu>
             <CloseButtonDiv as={animated.div} style={{ ...springs } as any}>
               <CloseButton onClick={hideNavbar}>
@@ -99,12 +106,16 @@ const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   }
 };
 
-const NavMenuContent: FC<{ toggleTheme: () => void }> = ({ toggleTheme }) => {
+const NavMenuContent: FC<{
+  toggleTheme: () => void;
+  currentSection: string;
+}> = ({ toggleTheme, currentSection }) => {
   const handleJump = (target: string) => {
     document.getElementById(target)?.scrollIntoView({
       behavior: "smooth",
     });
   };
+  const theme = useContext(ThemeContext);
   return (
     <>
       <FadeWhenInViewWrapper
@@ -157,16 +168,48 @@ const NavMenuContent: FC<{ toggleTheme: () => void }> = ({ toggleTheme }) => {
             <ThemeIcon />
           </ThemeButton>
           <StyledHR />
-          <JumpButton onClick={() => handleJump("landing")}>
+          <JumpButton
+            onClick={() => handleJump("landing")}
+            style={{
+              borderRight:
+                currentSection === "LANDING"
+                  ? `5px solid ${theme.colors.tertiary1}`
+                  : `5px solid transparent`,
+            }}
+          >
             <strong>0. </strong>Landing
           </JumpButton>
-          <JumpButton onClick={() => handleJump("about")}>
+          <JumpButton
+            onClick={() => handleJump("about")}
+            style={{
+              borderRight:
+                currentSection === "ABOUT"
+                  ? `5px solid ${theme.colors.tertiary1}`
+                  : `5px solid transparent`,
+            }}
+          >
             <strong>1. </strong>About
           </JumpButton>
-          <JumpButton onClick={() => handleJump("journey")}>
+          <JumpButton
+            onClick={() => handleJump("journey")}
+            style={{
+              borderRight:
+                currentSection === "JOURNEY"
+                  ? `5px solid ${theme.colors.tertiary1}`
+                  : `5px solid transparent`,
+            }}
+          >
             <strong>2. </strong>Journey
           </JumpButton>
-          <JumpButton onClick={() => handleJump("projects")}>
+          <JumpButton
+            onClick={() => handleJump("projects")}
+            style={{
+              borderRight:
+                currentSection === "PROJECTS"
+                  ? `5px solid ${theme.colors.tertiary1}`
+                  : `5px solid transparent`,
+            }}
+          >
             <strong>3. </strong>Projects
           </JumpButton>
         </ButtonsDiv>

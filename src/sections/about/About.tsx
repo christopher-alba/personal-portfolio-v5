@@ -74,9 +74,9 @@ const accordionContent = [
   },
 ];
 
-const About: FC = () => {
+const About: FC<{ refs: React.RefObject<any> }> = ({ refs }) => {
   return (
-    <SectionMainDiv id="about">
+    <SectionMainDiv id="about" ref={refs}>
       <Container>
         <Title text="About" />
         <ContentWrapper>

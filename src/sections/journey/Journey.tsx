@@ -15,6 +15,7 @@ import { SectionMainDiv } from "../../components/section";
 import { useSpring, animated } from "@react-spring/web";
 import useViewportWidth from "../../hooks/useViewportWidth";
 import { useMeasure } from "react-use";
+import FadeWhenInViewWrapper from "../../components/AnimationWrappers/FadeWhenInViewWrapper";
 
 const CompanyCard: FC<{ company: Company; index: number }> = ({
   company,
@@ -146,17 +147,21 @@ const CompanyCard: FC<{ company: Company; index: number }> = ({
   }
 };
 
-const Journey: FC = () => {
+const Journey: FC<{ refs: React.RefObject<any> }> = ({ refs }) => {
   return (
-    <SectionMainDiv id="journey">
+    <SectionMainDiv id="journey" ref={refs}>
       <Container>
         <Title text="My Journey in Web Development" />
-        <TimelineWrapper>
-          <Timeline></Timeline>
-          {data.map((company, index) => {
-            return <CompanyCard key={index} company={company} index={index} />;
-          })}
-        </TimelineWrapper>
+        <FadeWhenInViewWrapper animateOnce={false}>
+          <TimelineWrapper>
+            <Timeline></Timeline>
+            {data.map((company, index) => {
+              return (
+                <CompanyCard key={index} company={company} index={index} />
+              );
+            })}
+          </TimelineWrapper>
+        </FadeWhenInViewWrapper>
       </Container>
     </SectionMainDiv>
   );
