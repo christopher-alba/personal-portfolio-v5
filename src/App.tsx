@@ -26,12 +26,10 @@ function App() {
       <GlobalStyles />
       <Menu setTheme={setTheme} />
       <ContentDiv>
-        <FadeWhenInViewWrapper>
-          <Landing />
-          <About />
-          <Journey />
-          <Projects />
-        </FadeWhenInViewWrapper>
+        <Landing />
+        <About />
+        <Journey />
+        <Projects />
       </ContentDiv>
     </ThemeProvider>
   );
