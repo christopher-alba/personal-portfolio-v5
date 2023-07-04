@@ -11,6 +11,7 @@ import {
 import Accordion from "../../components/Accordion";
 import Grad from "./components/Grad";
 import Tech from "./components/Tech";
+import FadeWhenInViewWrapper from "../../components/AnimationWrappers/FadeWhenInViewWrapper";
 
 const accordionContent = [
   {
@@ -79,9 +80,11 @@ const About: FC = () => {
       <Container>
         <Title text="About" />
         <ContentWrapper>
-          <Grad />
-          <Accordion sections={accordionContent} />
-          <Tech />
+          <FadeWhenInViewWrapper animateOnce={false}>
+            <Grad />
+            <Accordion sections={accordionContent} />
+            <Tech />
+          </FadeWhenInViewWrapper>
         </ContentWrapper>
       </Container>
     </SectionMainDiv>

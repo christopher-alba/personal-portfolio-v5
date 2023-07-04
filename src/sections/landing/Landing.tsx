@@ -14,7 +14,7 @@ const Landing: FC = () => {
   return (
     <MainDiv id="landing">
       <ContentWrapper>
-        <FadeWhenInViewWrapper animateOnce>
+        <FadeWhenInViewWrapper animateOnce duration={1000}>
           <Name>Christopher Sy Alba</Name>
           <Occupation>Professional Software Engineer</Occupation>
           <SubTitle>Frontend Engineering Focused</SubTitle>

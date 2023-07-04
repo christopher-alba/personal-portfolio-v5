@@ -9,7 +9,6 @@ import { NavbarWidth, mobileNavBreakpoint } from "./sizes";
 import About from "./sections/about";
 import Journey from "./sections/journey";
 import Projects from "./sections/projects";
-import FadeWhenInViewWrapper from "./components/AnimationWrappers/FadeWhenInViewWrapper";
 export const ContentDiv = styled("div")`
   width: 100%;
   padding-left: ${NavbarWidth};

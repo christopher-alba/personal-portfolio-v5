@@ -1,10 +1,17 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useState } from "react";
 import SubSectionTitle from "../../../components/SubSectionTitle";
 import { TickTechSVG } from "../styled";
 import styled, { ThemeContext } from "styled-components";
 import { ReactComponent as GradIcon } from "../../../svg/icons/gradIcon.svg";
 import { ReactComponent as MoneyIcon } from "../../../svg/icons/moneyIcon.svg";
 import { ReactComponent as PracticalIcon } from "../../../svg/icons/practicalIcon.svg";
+import {
+  IntersectionArgs,
+  animated,
+  easings,
+  useInView,
+  useSpring,
+} from "@react-spring/web";
 
 type Technology = {
   name: string;
@@ -226,6 +233,17 @@ const TechBar: FC<Technology> = ({
   practicalExperience,
   paidExperience,
 }) => {
+  const [ref, isInView] = useInView({
+    threshold: 0.3,
+  } as IntersectionArgs);
+  const spring = useSpring({
+    opacity: isInView ? 1 : 0,
+    width: isInView ? `${rating * 102.5}%` : "0%",
+    config: {
+      duration: 1000,
+      easing: easings.easeInOutQuad,
+    },
+  });
   const theme = useContext(ThemeContext);
   return (
     <MainWrapper>
@@ -236,9 +254,11 @@ const TechBar: FC<Technology> = ({
         </BarTextWrapper>
         <BarDivOuter>
           <BarDivInner
+            ref={ref}
+            as={animated.div}
             style={{
-              width: rating * 102.5 + "%",
               left: "-1.25%",
+              ...spring,
             }}
           />
         </BarDivOuter>

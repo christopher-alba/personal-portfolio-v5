@@ -55,4 +55,5 @@ export const SubTitle = styled("h3")`
 export const StyledLink = styled(Link)`
   width: fit-content;
   margin-top: 20px;
+  display: block;
 `;

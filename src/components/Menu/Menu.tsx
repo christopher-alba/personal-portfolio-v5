@@ -25,7 +25,8 @@ import useViewportWidth from "../../hooks/useViewportWidth";
 import { mobileNavBreakpoint } from "../../sizes";
 import { DefaultTheme, ThemeContext } from "styled-components";
 import themes from "../../themes/schema.json";
-import { useSpring, animated } from "@react-spring/web";
+import { useSpring, animated, easings } from "@react-spring/web";
+import FadeWhenInViewWrapper from "../AnimationWrappers/FadeWhenInViewWrapper";
 
 const Menu: FC<{ setTheme: (theme: DefaultTheme) => void }> = ({
   setTheme,
@@ -106,54 +107,70 @@ const NavMenuContent: FC<{ toggleTheme: () => void }> = ({ toggleTheme }) => {
   };
   return (
     <>
-      <IconsDiv>
-        <StyledAnchor
-          href="https://www.facebook.com/christopher.alba.357/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FacebookSVG />
-        </StyledAnchor>
-        <StyledAnchor
-          href="https://www.instagram.com/alba.sy.chris/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <InstagramSVG />
-        </StyledAnchor>
-        <StyledAnchor
-          href="https://github.com/christopher-alba"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <GithubSVG />
-        </StyledAnchor>
-        <StyledAnchor
-          href="https://www.linkedin.com/in/christopher-alba"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkedinSVG />
-        </StyledAnchor>
-      </IconsDiv>
-      <ButtonsDiv>
-        <ThemeButton onClick={toggleTheme}>
-          <ThemeIcon />
-        </ThemeButton>
-        <StyledHR />
-        <JumpButton onClick={() => handleJump("landing")}>
-          <strong>0. </strong>Landing
-        </JumpButton>
-        <JumpButton onClick={() => handleJump("about")}>
-          <strong>1. </strong>About
-        </JumpButton>
-        <JumpButton onClick={() => handleJump("journey")}>
-          <strong>2. </strong>Journey
-        </JumpButton>
-        <JumpButton onClick={() => handleJump("projects")}>
-          <strong>3. </strong>Projects
-        </JumpButton>
-      </ButtonsDiv>
+      <FadeWhenInViewWrapper
+        animateOnce
+        xOffset={-100}
+        duration={1000}
+        rootMargin="200px"
+        easing={easings.easeInOutElastic}
+      >
+        <IconsDiv>
+          <StyledAnchor
+            href="https://www.facebook.com/christopher.alba.357/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FacebookSVG />
+          </StyledAnchor>
+          <StyledAnchor
+            href="https://www.instagram.com/alba.sy.chris/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramSVG />
+          </StyledAnchor>
+          <StyledAnchor
+            href="https://github.com/christopher-alba"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubSVG />
+          </StyledAnchor>
+          <StyledAnchor
+            href="https://www.linkedin.com/in/christopher-alba"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedinSVG />
+          </StyledAnchor>
+        </IconsDiv>
+      </FadeWhenInViewWrapper>
+      <FadeWhenInViewWrapper
+        animateOnce
+        yOffset={400}
+        duration={1000}
+        rootMargin="1000px"
+        easing={easings.easeInOutElastic}
+      >
+        <ButtonsDiv>
+          <ThemeButton onClick={toggleTheme}>
+            <ThemeIcon />
+          </ThemeButton>
+          <StyledHR />
+          <JumpButton onClick={() => handleJump("landing")}>
+            <strong>0. </strong>Landing
+          </JumpButton>
+          <JumpButton onClick={() => handleJump("about")}>
+            <strong>1. </strong>About
+          </JumpButton>
+          <JumpButton onClick={() => handleJump("journey")}>
+            <strong>2. </strong>Journey
+          </JumpButton>
+          <JumpButton onClick={() => handleJump("projects")}>
+            <strong>3. </strong>Projects
+          </JumpButton>
+        </ButtonsDiv>
+      </FadeWhenInViewWrapper>
     </>
   );
 };
