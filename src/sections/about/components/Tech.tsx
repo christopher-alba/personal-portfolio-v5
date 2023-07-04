@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from "react";
+import { FC, useContext } from "react";
 import SubSectionTitle from "../../../components/SubSectionTitle";
 import { TickTechSVG } from "../styled";
 import styled, { ThemeContext } from "styled-components";
