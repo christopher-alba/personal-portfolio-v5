@@ -30,6 +30,7 @@ export const GlobalStyles = createGlobalStyle`
           border-radius:10px;
           border: 3px solid ${({ theme }) => theme.colors.primary1};
       }
+      overflow:hidden;
   }
   button {
     font-family: 'Inter', sans-serif;

@@ -10,8 +10,10 @@ import About from "./sections/about";
 import Journey from "./sections/journey";
 import Projects from "./sections/projects";
 import { IntersectionArgs, useInView } from "@react-spring/web";
+import main from "./pacman/main";
 export const ContentDiv = styled("div")`
   width: 100%;
+  position: relative;
   padding-left: ${NavbarWidth};
   box-sizing: border-box;
   @media (max-width: ${mobileNavBreakpoint}px) {
@@ -46,12 +48,17 @@ function App() {
       setCurrentSection("PROJECTS");
     }
   }, [isInView1, isInView2, isInView3, isInView4]);
-
+  useEffect(() => {
+    main();
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Menu setTheme={setTheme} currentSection={currentSection} />
       <ContentDiv>
+        <div id="arena" style={{ position: "relative" }}>
+          <canvas id="myCanvas"></canvas>
+        </div>
         <Landing refs={ref1} />
         <About refs={ref2} />
         <Journey refs={ref3} />
