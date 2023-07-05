@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import SubSectionTitle from "./SubSectionTitle";
 import styled from "styled-components";
 import { ReactComponent as DownIcon } from "../svg/icons/chevronDown.svg";
-import { useMeasure, useWindowSize } from "react-use";
+import { useMeasure } from "react-use";
 import { animated, useSpring } from "@react-spring/web";
 import useViewportWidth from "../hooks/useViewportWidth";
 
