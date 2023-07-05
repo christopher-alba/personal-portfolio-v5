@@ -1,10 +1,13 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import SubSectionTitle from "./SubSectionTitle";
 import styled from "styled-components";
 import { ReactComponent as DownIcon } from "../svg/icons/chevronDown.svg";
+import { useMeasure } from "react-use";
+import { animated, useSpring } from "@react-spring/web";
 
 const InnerContentWrapper = styled("div")`
   border-bottom: solid 1px ${({ theme }) => theme.colors.secondary1};
+  overflow: hidden;
 `;
 const TitleWrapper = styled("div")`
   width: 100%;
@@ -34,8 +37,47 @@ const Subsection: FC<{
   toggleSection: (index: number) => void;
   active: boolean;
 }> = ({ Icon, titleText, ContentNode, active, index, toggleSection }) => {
+  const [contentHeight, setContentHeight] = useState(200);
+  const [ref, { height }] = useMeasure();
+  const [render, setRender] = useState(false);
+  useEffect(() => {
+    if (!active) {
+      setTimeout(() => {
+        setRender(false);
+      }, 500);
+    } else {
+      setRender(true);
+    }
+  }, [active]);
+  useEffect(() => {
+    //Sets initial height
+    setContentHeight(height);
+
+    //Adds resize event listener
+    window.addEventListener("resize", setContentHeight(height) as any);
+
+    // Clean-up
+    return window.removeEventListener(
+      "resize",
+      setContentHeight(height) as any
+    );
+  }, [height]);
+  const springs = useSpring({
+    top: active ? 0 : -10,
+    position: "relative",
+    opacity: active ? 1 : 0,
+  });
+  const springs2 = useSpring({
+    height: active ? contentHeight + 100 : 50,
+  });
   return (
-    <InnerContentWrapper>
+    <InnerContentWrapper
+      as={animated.div}
+      style={{ ...springs2 } as any}
+      onClick={() => {
+        toggleSection(index);
+      }}
+    >
       <TitleWrapper
         onClick={() => {
           toggleSection(index);
@@ -50,7 +92,13 @@ const Subsection: FC<{
           <DownIconSVG style={{ transform: active ? "rotate(180deg)" : "" }} />
         </ButtonDown>
       </TitleWrapper>
-      {active && ContentNode}
+      {render ? (
+        <animated.div ref={ref as any} style={{ ...springs } as any}>
+          {ContentNode}
+        </animated.div>
+      ) : (
+        ""
+      )}
     </InnerContentWrapper>
   );
 };
