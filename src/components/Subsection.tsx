@@ -2,8 +2,9 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import SubSectionTitle from "./SubSectionTitle";
 import styled from "styled-components";
 import { ReactComponent as DownIcon } from "../svg/icons/chevronDown.svg";
-import { useMeasure } from "react-use";
+import { useMeasure, useWindowSize } from "react-use";
 import { animated, useSpring } from "@react-spring/web";
+import useViewportWidth from "../hooks/useViewportWidth";
 
 const InnerContentWrapper = styled("div")`
   border-bottom: solid 1px ${({ theme }) => theme.colors.secondary1};
@@ -40,6 +41,7 @@ const Subsection: FC<{
   const [contentHeight, setContentHeight] = useState(200);
   const [ref, { height }] = useMeasure();
   const [render, setRender] = useState(false);
+  const width = useViewportWidth();
   useEffect(() => {
     if (!active) {
       setTimeout(() => {
@@ -68,7 +70,7 @@ const Subsection: FC<{
     opacity: active ? 1 : 0,
   });
   const springs2 = useSpring({
-    height: active ? contentHeight + 100 : 50,
+    height: active ? contentHeight + 100 : width > 600 ? 50 : 100,
   });
   return (
     <InnerContentWrapper
