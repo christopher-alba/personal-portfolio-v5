@@ -260,7 +260,7 @@ const TechBar: FC<Technology> = ({
             as={animated.div}
             style={{
               left: "-1.25%",
-              opacity: spring.opacity,
+              opacity: width > 600 ? spring.opacity : 1,
               width: width > 600 ? spring.width : `${rating * 102.5}%`,
             }}
           />
