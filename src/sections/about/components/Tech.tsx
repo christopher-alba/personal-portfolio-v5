@@ -12,6 +12,7 @@ import {
   useInView,
   useSpring,
 } from "@react-spring/web";
+import useViewportWidth from "../../../hooks/useViewportWidth";
 
 type Technology = {
   name: string;
@@ -236,6 +237,7 @@ const TechBar: FC<Technology> = ({
   const [ref, isInView] = useInView({
     threshold: 0.3,
   } as IntersectionArgs);
+  const width = useViewportWidth();
   const spring = useSpring({
     opacity: isInView ? 1 : 0,
     width: isInView ? `${rating * 102.5}%` : "0%",
@@ -258,7 +260,8 @@ const TechBar: FC<Technology> = ({
             as={animated.div}
             style={{
               left: "-1.25%",
-              ...spring,
+              opacity: spring.opacity,
+              width: width > 600 ? spring.width : `${rating * 102.5}%`,
             }}
           />
         </BarDivOuter>
