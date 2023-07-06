@@ -70,6 +70,7 @@ const Menu: FC<{
         <NavMenuContent
           toggleTheme={toggleTheme}
           currentSection={currentSection}
+          hideNavbar={hideNavbar}
         />
       </MainDiv>
     );
@@ -92,6 +93,7 @@ const Menu: FC<{
               <NavMenuContent
                 toggleTheme={toggleTheme}
                 currentSection={currentSection}
+                hideNavbar={hideNavbar}
               />
             </DropdownMenu>
             <CloseButtonDiv as={animated.div} style={{ ...springs } as any}>
@@ -108,12 +110,14 @@ const Menu: FC<{
 
 const NavMenuContent: FC<{
   toggleTheme: () => void;
+  hideNavbar: () => void;
   currentSection: string;
-}> = ({ toggleTheme, currentSection }) => {
+}> = ({ toggleTheme, currentSection, hideNavbar }) => {
   const handleJump = (target: string) => {
     document.getElementById(target)?.scrollIntoView({
       behavior: "smooth",
     });
+    hideNavbar();
   };
   const theme = useContext(ThemeContext);
   return (
